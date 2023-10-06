@@ -1,0 +1,588 @@
+$primary:#34eb58;
+$fg:#f1f1f1;
+$bg:#000000;
+$red:#FE4202;
+
+$text-normal:25px;
+$text-medium: 5vw;
+$text-large: 11vw;
+
+
+.text-normal {
+  font-size: $text-normal;
+}
+
+.text-medium {
+  font-size: $text-medium;
+}
+
+.text-large {
+  font-size: $text-large;
+}
+
+* {
+  box-sizing: border-box;
+
+  font-family: Junicode, times, serif;
+  font-size: $text-normal;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $fg !important;
+  }
+
+}
+
+
+
+html,
+body {
+  margin: 0;
+}
+
+* {
+  font-weight: normal !important;
+}
+
+body {
+
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  background: $bg;
+}
+
+#content {
+  width: 100%;
+  background: $fg;
+  padding: 50px 0;
+
+  h2 {
+    font-size: $text-medium;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+}
+
+main {
+
+  width: 100%;
+
+
+}
+
+#main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $bg;
+
+  text-transform: uppercase;
+  color: $primary;
+  padding: 10px;
+
+  a {
+    color: $primary;
+  }
+
+
+
+}
+
+#bottomnav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  text-transform: uppercase;
+  color: $primary;
+  padding: 10px;
+  z-index: 1111;
+
+  cursor: pointer;
+}
+
+
+#stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: $bg;
+  height: 100vh;
+}
+
+/*Definition einer einfachen Keyframe-Animation*/
+@keyframes appear {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/*Definition einer einfachen Keyframe-Animation*/
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+
+  77% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  85% {
+    opacity: 0;
+  }
+
+  91% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+#welcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  width: 100%;
+  background: $bg;
+  height: 100vh;
+
+
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaaaaa;
+
+
+
+    font-size: $text-medium;
+
+    &:hover {
+      background: $red;
+      color:
+        $primary;
+    }
+  }
+}
+
+
+/*Definition einer einfachen Keyframe-Animation*/
+@keyframes heightani {
+  0% {
+    height: 100vh
+  }
+
+  100% {
+    height: 50vh
+  }
+}
+
+
+#intro {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // animation: heightani 1s;
+
+  h1 {
+    text-align: center;
+    color: $fg;
+    font-size: $text-large;
+    font-family: cut;
+    font-weight: 300;
+
+  }
+}
+
+
+
+
+#selectReaction {
+  width: 100%;
+  height: 40vh;
+  position: relative;
+
+  display: flex;
+  ;
+  justify-content: space-around;
+
+  a {
+    padding: 0 70px;
+    color: $primary;
+    background: $bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $text-medium;
+
+
+    &:hover {
+      background: $bg;
+      color: $fg;
+
+    }
+  }
+}
+
+a:hover {
+  color: $red;
+}
+
+#portal {
+
+  background: $bg;
+  position: relative;
+
+  #links {
+    width: 100%;
+    height: 40vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+
+
+  a {
+    text-align: center;
+
+    animation: appear 6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $fg;
+    flex-direction: column;
+
+    &:hover {
+      color: $primary !important;
+    }
+
+    h2 {
+      font-family: cut;
+      font-weight: 300;
+      margin: 0;
+      line-height: 100%;
+
+      font-size: $text-medium;
+    }
+
+    p {
+      margin: 0;
+      text-transform: uppercase;
+      ;
+    }
+
+  }
+
+  .overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+
+
+
+    h1 {
+
+      color: $fg;
+      text-align: center;
+      font-size: 15vw;
+      line-height: 85%;
+      text-transform: uppercase;
+    }
+  }
+}
+
+#type-overlay {
+  animation: flash 2s infinite;
+}
+
+#intro-stage {
+  opacity: 0.5;
+}
+
+
+
+#vorhang {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: $fg;
+  z-index: 1111111111;
+  overflow-y: scroll;
+  transition: all 1s ease;
+  cursor: pointer;
+
+  padding: 45px;
+
+  &.hide {
+    bottom: -111vh;
+  }
+
+  h1 {
+    padding: 0;
+    margin: 0;
+    font-family: cut;
+    color: $bg;
+    text-align: center;
+    font-size: 11vw;
+    line-height: 85%;
+  }
+
+  h2 {
+    text-align: center;
+    font-family: cut;
+    font-size: 44px;
+    line-height: 95%;
+    font-size: $text-medium;
+  }
+
+  p {
+    color: $bg;
+    text-align: center;
+    font-size: $text-medium;
+    line-height: 100%;
+    margin: 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+#thegallery {
+
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/*Definition einer einfachen Keyframe-Animation*/
+@keyframes reveal {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#preloader {
+  z-index: 9999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $bg;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  animation: reveal 1s;
+  opacity: 0;
+}
+
+#so-stage {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  #so-left {
+    height: 100vh;
+    background: $bg;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100vh;
+
+    a {
+
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: $text-medium;
+      background: $bg;
+      color: $primary;
+      cursor: pointer;
+
+      &:hover {
+        color: $fg;
+
+      }
+
+    }
+
+    &:hover {
+
+      a {
+        opacity: 1;
+      }
+    }
+  }
+
+  #so-right {
+    height: 100vh;
+    background: $bg;
+  }
+}
+
+#reactionsNav {
+  position: fixed;
+
+  padding: 10px;
+  z-index: 1000000;
+
+  a {
+    color: $primary
+  }
+}
+
+/* Zeichnet jeden markierten Text gelb auf rotem Hintergrund */
+::-moz-selection {
+  background: transparent;
+}
+
+::selection {
+  background: transparent;
+}
+
+
+#so3-stage {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  #so3nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+
+    a {
+      width: 100%;
+      height: 50vh;
+    }
+  }
+
+  #so3-left {
+    height: 100vh;
+    background: $fg;
+    position: relative;
+
+    z-index: 1000;
+
+    #so3inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 665;
+      pointer-events: none;
+
+      h1 {
+        z-index: 665;
+        position: relative;
+
+        color: white;
+      }
+
+      width: 100%;
+      height: 100vh;
+    }
+
+
+    a {
+      z-index: 667;
+
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: $text-medium;
+      background: $bg;
+      color: $primary;
+      cursor: pointer;
+
+      &:hover {
+        color: $fg;
+
+      }
+
+    }
+
+    &:hover {
+
+      a {
+        opacity: 1;
+      }
+    }
+  }
+
+  #so3-right {
+    height: 100vh;
+    background: $bg;
+  }
+}
